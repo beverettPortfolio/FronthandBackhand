@@ -14,7 +14,6 @@ public class ScoreSystem : MonoBehaviour {
 		currentScore = 0;
 		highscore = 0;
 		multiplier = 0;
-		UpdateScore ();
 	}
 	
 	void resetMultiplier() {
@@ -23,11 +22,10 @@ public class ScoreSystem : MonoBehaviour {
 	
 	void adjustScore( int score ) {
 		currentScore += score;
-		UpdateScore ();
 	}
 	
 	// Update is called once per frame
-	void UpdateScore () {
+	void Update () {
 		scoreText.text = "Score: " + currentScore;
 		multiplierText.text = "Multiplier: " + multiplier;
 	}
