@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Colliders : MonoBehaviour {
-	public enum ColliderColor{RED, BLUE, GREEN};
 	
-	public ColliderColor colliderColor;
+	public GameObject redSensor;
+	public GameObject greenSensor;
+	public GameObject blueSensor;
+
 	public ScoreSystem score;
 
 	// Use this for initialization
@@ -15,51 +18,46 @@ public class Colliders : MonoBehaviour {
 	void Update () {
 		
 	}
-	void OnTriggerEnter2D(Collider2D coll) {
-		switch(colliderColor) {
 
-		case ColliderColor.RED:
-			if (coll.gameObject.CompareTag("RedBall")) {
-				//Debug.Log("Redball hit");
-				score.adjustScore(score.multiplier);
-				score.increaseMultiplier(1);
-			}
-			else if (coll.gameObject.CompareTag("GreenBall"))
-				score.resetMultiplier();			
-			else if (coll.gameObject.CompareTag("BlueBall"))
-				score.resetMultiplier();
-			break;
-
-		case ColliderColor.GREEN:
-			if (coll.gameObject.CompareTag("RedBall"))
-				score.resetMultiplier();
-			else if (coll.gameObject.CompareTag("GreenBall")) {
-				score.adjustScore(score.multiplier);
-				score.increaseMultiplier(1);
-			}
-			else if (coll.gameObject.CompareTag("BlueBall"))
-				score.resetMultiplier();
-			break;
-
-		case ColliderColor.BLUE:
-			if (coll.gameObject.CompareTag("RedBall"))
-				score.resetMultiplier();
-			else if (coll.gameObject.CompareTag("GreenBall"))
-				score.resetMultiplier();
-			else if (coll.gameObject.CompareTag("BlueBall")) {
-				score.adjustScore(score.multiplier);
-				score.increaseMultiplier(1);
-			}
-			break;
-
-		default:
-			break;
-		};
-		DestroyBall (coll.gameObject);
+	private float CalcSqrDistance(GameObject sensor, Collider2D coll) {
+		Vector2 sensorPosition = sensor.transform.position;
+		Vector2 collPosition = coll.gameObject.transform.position;
+		return (collPosition - sensorPosition).sqrMagnitude;
 	}
 
-	void DestroyBall (GameObject ball) {
-		if (ball != null)
-			Destroy (ball);
+	void OnTriggerEnter2D(Collider2D coll) {
+		HashSet<string> ballTags = new HashSet<string> (new string[]{"RedBall", "GreenBall", "BlueBall"});
+
+		if (ballTags.Contains(coll.gameObject.tag)) {
+			Vector2 offset = coll.gameObject.transform.position - transform.position;
+			float direction = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
+
+			
+			float redSqrDistance = CalcSqrDistance (redSensor, coll);
+			float greenSqrDistance = CalcSqrDistance (greenSensor, coll);
+			float blueSqrDistance = CalcSqrDistance (blueSensor, coll);
+
+			string hitSide;
+
+			if (redSqrDistance < greenSqrDistance && redSqrDistance < blueSqrDistance) {
+				hitSide = "RedBall";
+			}
+			else if (greenSqrDistance <= blueSqrDistance) {
+				hitSide = "GreenBall";
+			}
+			else {
+				hitSide = "BlueBall";
+			}
+
+			if (hitSide == coll.gameObject.tag) {
+				score.adjustScore(score.multiplier);
+				score.increaseMultiplier(1);
+			}
+			else {
+				score.resetMultiplier();
+			}
+
+			Destroy(coll.gameObject);
+		}
 	}
 }
