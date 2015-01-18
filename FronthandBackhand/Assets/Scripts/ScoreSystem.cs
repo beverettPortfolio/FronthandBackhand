@@ -7,6 +7,7 @@ public class ScoreSystem : MonoBehaviour {
 	public int multiplier;
 	public GUIText scoreText;
 	public GUIText multiplierText;
+	public GUIText highscoreText;
 	
 	
 	// Use this for initialization
@@ -28,5 +29,12 @@ public class ScoreSystem : MonoBehaviour {
 	void Update () {
 		scoreText.text = "Score: " + currentScore;
 		multiplierText.text = "Multiplier: " + multiplier;
+
+		if (currentScore > highscore) {
+			highscore = currentScore;	
+			PlayerPrefs.SetInt("High Score", highscore);
+		}
+
+		highscoreText.text = "High Score: " + highscore;
 	}
 }
