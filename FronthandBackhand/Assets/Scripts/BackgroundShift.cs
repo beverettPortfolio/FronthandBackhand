@@ -43,8 +43,9 @@ public class BackgroundShift : MonoBehaviour {
 		}
 
 		h = Mathf.Repeat (h, 360.0f) / 360.0f;
-		float s = Mathf.Lerp (SaturationStart, SaturationEnd, Music.BeatPhase);
-		float b = Mathf.Lerp (BrightnessStart, BrightnessEnd, Music.BeatPhase);
+		float beatAmount = 2.0f * Mathf.Abs (0.5f - Mathf.Sqrt(Music.BeatPhase));
+		float s = Mathf.Lerp (SaturationStart, SaturationEnd, beatAmount);
+		float b = Mathf.Lerp (BrightnessStart, BrightnessEnd, beatAmount);
 		HSBColor hsbColor = new HSBColor (h, s, b);
 		Color color = HSBColor.ToColor (hsbColor);
 
