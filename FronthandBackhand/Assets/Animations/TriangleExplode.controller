@@ -5,13 +5,19 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: triangleidle_0
+  m_Name: TriangleExplode
   serializedVersion: 2
-  m_AnimatorParameters: []
+  m_AnimatorParameters:
+  - m_Name: Explode
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
-    m_StateMachine: {fileID: 110702886}
+    m_StateMachine: {fileID: 110753754}
     m_Mask: {fileID: 0}
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
@@ -20,77 +26,95 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1101 &110167502
+--- !u!1101 &110119172
 Transition:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110202886}
-  m_DstState: {fileID: 110249616}
-  m_TransitionDuration: 0
+  m_SrcState: {fileID: 110226464}
+  m_DstState: {fileID: 110247484}
+  m_TransitionDuration: .100000001
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: 
+  - m_ConditionMode: 1
+    m_ConditionEvent: Explode
     m_EventTreshold: 0
-    m_ExitTime: 435
+    m_ExitTime: .899999976
   m_Atomic: 1
-  m_Solo: 1
+  m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
---- !u!1102 &110202886
+--- !u!1102 &110226464
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: TriangleIdle
+  m_Name: Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 1c9a49e61c8db4764aa4b17abedfbb03, type: 2}
-  m_ParentStateMachine: {fileID: 110702886}
-  m_Position: {x: -216, y: 84, z: 0}
+  - {fileID: 0}
+  m_ParentStateMachine: {fileID: 110753754}
+  m_Position: {x: 36, y: -72, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1102 &110249616
+--- !u!1102 &110247484
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: TriangleExplosion
+  m_Name: Explode
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 101e15c8b63e14293936263a96d6c876, type: 2}
-  m_ParentStateMachine: {fileID: 110702886}
-  m_Position: {x: 168, y: 84, z: 0}
+  - {fileID: 7400000, guid: 82126fc313af4104393a6f38df452c22, type: 2}
+  m_ParentStateMachine: {fileID: 110753754}
+  m_Position: {x: -72, y: 48, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1107 &110702886
+--- !u!1107 &110753754
 StateMachine:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Base Layer
-  m_DefaultState: {fileID: 110202886}
+  m_DefaultState: {fileID: 110226464}
   m_States:
-  - {fileID: 110202886}
-  - {fileID: 110249616}
+  - {fileID: 110247484}
+  - {fileID: 110226464}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110249616}
+      first: {fileID: 110226464}
+      second:
+      - {fileID: 110119172}
+    data:
+      first: {fileID: 110247484}
       second: []
     data:
-      first: {fileID: 110202886}
-      second:
-      - {fileID: 110167502}
+      first: {fileID: 0}
+      second: []
+  m_MotionSetCount: 1
+  m_AnyStatePosition: {x: -204, y: -48, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+--- !u!1107 &110787020
+StateMachine:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: New Layer
+  m_DefaultState: {fileID: 0}
+  m_States: []
+  m_ChildStateMachine: []
+  m_ChildStateMachinePosition: []
+  m_OrderedTransitions: {}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
