@@ -174,7 +174,7 @@ GameObject:
   - 4: {fileID: 500803836}
   - 82: {fileID: 500803835}
   m_Layer: 0
-  m_Name: Derp
+  m_Name: TellMe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,7 +189,7 @@ AudioSource:
   m_GameObject: {fileID: 500803834}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: cb0f5b7ac64298e4395fb79720ae1f20, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6a3f748ead1c6459bac44f0eb3a99403, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
