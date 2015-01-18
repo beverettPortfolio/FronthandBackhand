@@ -9,12 +9,17 @@ public class BallControllerScript : MonoBehaviour {
 	public AudioSource song;
 	public TextAsset beatMap;
 	public GameObject ballPrefab;
+	public Vector2 leftPosition;
+	public Vector2 rightPosition;
 
 	private List<double[]> beatMapLeft;
 	private List<double[]> beatMapRight;
 	private int leftIndex;
 	private int rightIndex;
 	private GameObject currentBeat;
+
+	private Color[] colorCodeColors;
+	private String[] colorCodeTags;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +28,8 @@ public class BallControllerScript : MonoBehaviour {
 		beatMapLeft = new List<double[]> ();
 		beatMapRight = new List<double[]> ();
 		readBeatMap ();
+		colorCodeColors = new Color[]{Color.red, Color.green, Color.blue};
+		colorCodeTags = new String[]{"RedBall", "GreenBall", "BlueBall"};
 	}
 	
 	// Update is called once per frame
@@ -58,11 +65,10 @@ public class BallControllerScript : MonoBehaviour {
 	}
 
 	void createBall(string side, double colorCode){
-		if (side.Equals ("l")) {
-			currentBeat = Instantiate (ballPrefab, transform.position, transform.rotation) as GameObject;
-		} 
-		else if (side.Equals ("r")) {
-			currentBeat = Instantiate (ballPrefab, transform.position, transform.rotation) as GameObject;
-		}
+		Vector2 position = side.Equals ("l") ? leftPosition : rightPosition;
+		currentBeat = Instantiate (ballPrefab, position, Quaternion.identity) as GameObject;
+		int iColorCode = Convert.ToInt32 (colorCode);
+		currentBeat.GetComponent<SpriteRenderer> ().color = colorCodeColors [iColorCode];
+		currentBeat.tag = colorCodeTags [iColorCode];
 	}
 }
