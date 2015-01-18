@@ -221,7 +221,20 @@ Prefab:
       propertyPath: ballAcceptingPrefab
       value: 
       objectReference: {fileID: 116626, guid: 5781d4a7016374f9e859303c21e6a4ea, type: 2}
-    m_RemovedComponents: []
+    - target: {fileID: 9534332, guid: e4cc76e3c532748e48d91bd8bc83a9ec, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 815feb8d4bd96427a839827e870d1e66, type: 2}
+    - target: {fileID: 9534332, guid: e4cc76e3c532748e48d91bd8bc83a9ec, type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9534332, guid: e4cc76e3c532748e48d91bd8bc83a9ec, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9534332, guid: e4cc76e3c532748e48d91bd8bc83a9ec, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e4cc76e3c532748e48d91bd8bc83a9ec, type: 2}
   m_RootGameObject: {fileID: 2092410594}
   m_IsPrefabParent: 0
@@ -860,6 +873,7 @@ GameObject:
   - 58: {fileID: 2092410600}
   - 50: {fileID: 2092410599}
   - 114: {fileID: 2092410598}
+  - 95: {fileID: 2092410601}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -964,3 +978,18 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: 2.25
   m_Center: {x: 0, y: 0}
+--- !u!95 &2092410601
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2092410594}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c5c2a6939401469f99f7508e177dce6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
