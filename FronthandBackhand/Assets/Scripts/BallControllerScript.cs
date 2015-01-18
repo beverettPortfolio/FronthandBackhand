@@ -32,8 +32,8 @@ public class BallControllerScript : MonoBehaviour {
 		colorCodeTags = new String[]{"RedBall", "GreenBall", "BlueBall"};
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	// Update is called once per physics-frame
+	void FixedUpdate () {
 		if (leftIndex < beatMapLeft.Count) {		
 			double leftTime = beatMapLeft[leftIndex][0]/(BPM/60)*song.clip.frequency;
 			if (song.timeSamples>=leftTime){
