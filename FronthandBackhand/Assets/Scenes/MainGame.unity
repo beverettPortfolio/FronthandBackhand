@@ -873,7 +873,8 @@ GameObject:
   - 58: {fileID: 2092410600}
   - 50: {fileID: 2092410599}
   - 114: {fileID: 2092410598}
-  - 95: {fileID: 2092410601}
+  - 114: {fileID: 2092410601}
+  - 95: {fileID: 2092410603}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -978,7 +979,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: 2.25
   m_Center: {x: 0, y: 0}
---- !u!95 &2092410601
+--- !u!114 &2092410601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2092410594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c91e522602b5be4eb9d0bbfaebaae8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballcontrol: {fileID: 169622291}
+--- !u!95 &2092410603
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -987,9 +1000,9 @@ Animator:
   m_GameObject: {fileID: 2092410594}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8c5c2a6939401469f99f7508e177dce6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 82b53cfdea2e2194d927c05c97eaa581, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
