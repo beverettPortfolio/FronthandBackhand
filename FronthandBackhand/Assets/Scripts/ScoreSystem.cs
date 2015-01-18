@@ -19,6 +19,8 @@ public class ScoreSystem : MonoBehaviour {
 
 	public void resetMultiplier() {
 		multiplier = 1;
+		Camera.main.GetComponent<CameraShakeScript>().shakeAmount = .5f;
+		Camera.main.GetComponent<CameraShakeScript>().shake = .5f;
 	}
 
 	public void increaseMultiplier(int inc) {
