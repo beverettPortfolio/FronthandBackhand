@@ -71,7 +71,8 @@ public class BallControllerScript : MonoBehaviour {
 		Vector2 position = side.Equals ("l") ? leftPosition : rightPosition;
 		currentBeat = Instantiate (ballPrefab, position, Quaternion.identity) as GameObject;
 		int iColorCode = Convert.ToInt32 (colorCode);
-		currentBeat.GetComponent<SpriteRenderer> ().color = colorCodeColors [iColorCode];
+		//currentBeat.GetComponentInChildren<BallPulse> ().gameObject.GetComponent<SpriteRenderer>().color = colorCodeColors [iColorCode];
+		currentBeat.GetComponent<SpriteRenderer>().color = colorCodeColors [iColorCode];
 		currentBeat.tag = colorCodeTags [iColorCode];
 	}
 }

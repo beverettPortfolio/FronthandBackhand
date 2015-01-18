@@ -521,8 +521,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Music: {fileID: 751627018}
   SaturationStart: .5
-  BrightnessStart: .75
-  SaturationEnd: 1
+  BrightnessStart: .600000024
+  SaturationEnd: .600000024
   BrightnessEnd: .5
 --- !u!114 &751627018
 MonoBehaviour:
