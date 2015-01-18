@@ -209,6 +209,18 @@ Prefab:
       propertyPath: score
       value: 
       objectReference: {fileID: 241730154}
+    - target: {fileID: 11441126, guid: e4cc76e3c532748e48d91bd8bc83a9ec, type: 2}
+      propertyPath: RotationDuration
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400272, guid: e4cc76e3c532748e48d91bd8bc83a9ec, type: 2}
+      propertyPath: ballExplodePrefab
+      value: 
+      objectReference: {fileID: 140186, guid: 8272840067d234548b1c6df13aa03aee, type: 2}
+    - target: {fileID: 11400272, guid: e4cc76e3c532748e48d91bd8bc83a9ec, type: 2}
+      propertyPath: ballAcceptingPrefab
+      value: 
+      objectReference: {fileID: 116626, guid: 5781d4a7016374f9e859303c21e6a4ea, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e4cc76e3c532748e48d91bd8bc83a9ec, type: 2}
   m_RootGameObject: {fileID: 2092410594}
@@ -570,7 +582,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 465206, guid: a3b5d5a691743ee46aa3921f68e48a28, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3b5d5a691743ee46aa3921f68e48a28, type: 2}
@@ -784,7 +796,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425516, guid: ffdcc5c4e1f0c4d55b59cd14295e3a8f, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ffdcc5c4e1f0c4d55b59cd14295e3a8f, type: 2}
@@ -828,7 +840,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 437310, guid: f982d1ec14fb4074abf1870690e452a7, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f982d1ec14fb4074abf1870690e452a7, type: 2}
@@ -905,7 +917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce383151ac8c4951ab8c5de45e5e94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationDuration: .200000003
+  RotationDuration: .100000001
 --- !u!114 &2092410598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -921,6 +933,8 @@ MonoBehaviour:
   redSensor: {fileID: 1657133736}
   greenSensor: {fileID: 528059835}
   blueSensor: {fileID: 1229261049}
+  ballExplodePrefab: {fileID: 140186, guid: 8272840067d234548b1c6df13aa03aee, type: 2}
+  ballAcceptingPrefab: {fileID: 116626, guid: 5781d4a7016374f9e859303c21e6a4ea, type: 2}
   score: {fileID: 241730154}
 --- !u!50 &2092410599
 Rigidbody2D:
