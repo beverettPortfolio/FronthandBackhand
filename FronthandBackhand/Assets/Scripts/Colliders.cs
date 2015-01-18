@@ -29,10 +29,6 @@ public class Colliders : MonoBehaviour {
 		HashSet<string> ballTags = new HashSet<string> (new string[]{"RedBall", "GreenBall", "BlueBall"});
 
 		if (ballTags.Contains(coll.gameObject.tag)) {
-			Vector2 offset = coll.gameObject.transform.position - transform.position;
-			float direction = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
-
-			
 			float redSqrDistance = CalcSqrDistance (redSensor, coll);
 			float greenSqrDistance = CalcSqrDistance (greenSensor, coll);
 			float blueSqrDistance = CalcSqrDistance (blueSensor, coll);
