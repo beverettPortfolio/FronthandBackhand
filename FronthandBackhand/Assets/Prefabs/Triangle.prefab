@@ -177,8 +177,8 @@ EdgeCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Points:
-  - {x: -4.51348972, y: -3.59758377}
-  - {x: .00091317296, y: 4.20064688}
+  - {x: -4.13636065, y: -2.49133754}
+  - {x: -.0104363468, y: 4.35953951}
 --- !u!68 &6843752
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -189,8 +189,8 @@ EdgeCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Points:
-  - {x: -.0270408429, y: 4.17734289}
-  - {x: 4.49877596, y: -3.59361362}
+  - {x: -.0110634193, y: 4.37306595}
+  - {x: 4.09780788, y: -2.48717904}
 --- !u!68 &6843754
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -201,8 +201,8 @@ EdgeCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Points:
-  - {x: -4.5134902, y: -3.59758377}
-  - {x: 4.45110416, y: -3.61837912}
+  - {x: -4.14241886, y: -2.48436999}
+  - {x: 4.10264397, y: -2.49086332}
 --- !u!114 &11441126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -274,7 +274,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 834174b40cf63422f8868ebc897dbb1b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b928b9b486e65840a1d28a3abed036b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
