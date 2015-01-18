@@ -8,11 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 443750}
-  - 50: {fileID: 5043750}
-  - 68: {fileID: 6843750}
-  - 114: {fileID: 11443750}
   m_Layer: 0
-  m_Name: RedCollider
+  m_Name: RedSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,11 +23,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 443752}
-  - 50: {fileID: 5043752}
-  - 68: {fileID: 6843752}
-  - 114: {fileID: 11443752}
   m_Layer: 0
-  m_Name: BlueCollider
+  m_Name: BlueSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,11 +38,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 443754}
-  - 50: {fileID: 5043754}
-  - 68: {fileID: 6843754}
-  - 114: {fileID: 11443754}
   m_Layer: 0
-  m_Name: GreenCollider
+  m_Name: GreenSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,6 +55,9 @@ GameObject:
   - 4: {fileID: 470046}
   - 212: {fileID: 21270046}
   - 114: {fileID: 11441126}
+  - 58: {fileID: 5800272}
+  - 50: {fileID: 5000272}
+  - 114: {fileID: 11400272}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -78,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.06999993, y: 1.02999997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 470046}
@@ -90,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.94000006, y: 1.02999997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 470046}
@@ -102,7 +96,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.49000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 470046}
@@ -122,87 +116,47 @@ Transform:
   - {fileID: 443754}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5043750
+--- !u!50 &5000272
 Rigidbody2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143750}
+  m_GameObject: {fileID: 170046}
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_FixedAngle: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!50 &5043752
-Rigidbody2D:
+--- !u!58 &5800272
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143752}
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
-  m_GravityScale: 0
-  m_FixedAngle: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
---- !u!50 &5043754
-Rigidbody2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143754}
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
-  m_GravityScale: 0
-  m_FixedAngle: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
---- !u!68 &6843750
-EdgeCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143750}
+  m_GameObject: {fileID: 170046}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Points:
-  - {x: -4.13636065, y: -2.49133754}
-  - {x: -.0104363468, y: 4.35953951}
---- !u!68 &6843752
-EdgeCollider2D:
+  m_IsTrigger: 0
+  m_Radius: 2.25
+  m_Center: {x: 0, y: 0}
+--- !u!114 &11400272
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143752}
+  m_GameObject: {fileID: 170046}
   m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Points:
-  - {x: -.0110634193, y: 4.37306595}
-  - {x: 4.09780788, y: -2.48717904}
---- !u!68 &6843754
-EdgeCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143754}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Points:
-  - {x: -4.14241886, y: -2.48436999}
-  - {x: 4.10264397, y: -2.49086332}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7bd77388102a84458d1701dc2a85f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redSensor: {fileID: 143750}
+  greenSensor: {fileID: 143754}
+  blueSensor: {fileID: 143752}
+  score: {fileID: 0}
 --- !u!114 &11441126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -215,45 +169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationDuration: .200000003
---- !u!114 &11443750
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7bd77388102a84458d1701dc2a85f2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colliderColor: 0
-  score: {fileID: 0}
---- !u!114 &11443752
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7bd77388102a84458d1701dc2a85f2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colliderColor: 1
-  score: {fileID: 0}
---- !u!114 &11443754
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7bd77388102a84458d1701dc2a85f2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colliderColor: 2
-  score: {fileID: 0}
 --- !u!212 &21270046
 SpriteRenderer:
   m_ObjectHideFlags: 1
