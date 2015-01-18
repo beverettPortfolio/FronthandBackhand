@@ -4,6 +4,7 @@ using System.Collections;
 public class BallMovement : MonoBehaviour {
 
 	public float Speed;
+	public Vector3 GoalPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -11,7 +12,7 @@ public class BallMovement : MonoBehaviour {
 
 	void FixedUpdate () {
 		Vector3 position = transform.position;
-		position -= position.normalized * Speed;
+		position -= (position - GoalPosition).normalized * Speed;
 		transform.position = position;
 	}
 	

@@ -8,6 +8,9 @@ public class Colliders : MonoBehaviour {
 	public GameObject greenSensor;
 	public GameObject blueSensor;
 
+	public GameObject ballExplodePrefab;
+	public GameObject ballAcceptingPrefab;
+
 	public ScoreSystem score;
 
 	// Use this for initialization
@@ -45,13 +48,21 @@ public class Colliders : MonoBehaviour {
 				hitSide = "BlueBall";
 			}
 
+			GameObject ballEndPrefab;
+
+			// if correct
 			if (hitSide == coll.gameObject.tag) {
 				score.adjustScore(score.multiplier);
 				score.increaseMultiplier(1);
+				ballEndPrefab = ballAcceptingPrefab;
 			}
 			else {
 				score.resetMultiplier();
+				ballEndPrefab = ballExplodePrefab;
 			}
+			
+			GameObject ballEnd = Instantiate(ballEndPrefab, coll.gameObject.transform.position, coll.gameObject.transform.rotation) as GameObject;
+			ballEnd.GetComponent<SpriteRenderer>().color = coll.gameObject.GetComponent<SpriteRenderer>().color;
 
 			Destroy(coll.gameObject);
 		}
