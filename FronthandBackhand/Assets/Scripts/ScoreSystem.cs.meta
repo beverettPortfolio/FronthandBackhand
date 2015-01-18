@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: ac7380dc9364ff34dbd44b3797552a2e
+=======
+guid: 68f6082f14195f548823964c404fcc6e
+>>>>>>> feature/score-system2
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []

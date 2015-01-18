@@ -7,8 +7,9 @@ public class ScoreSystem : MonoBehaviour {
 	public int multiplier;
 	public GUIText scoreText;
 	public GUIText multiplierText;
-
-
+	public GUIText highscoreText;
+	
+	
 	// Use this for initialization
 	void Start () {
 		currentScore = 0;
@@ -27,10 +28,17 @@ public class ScoreSystem : MonoBehaviour {
 	public void adjustScore( int score ) {
 		currentScore += score;
 	}
-
+	
 	// Update is called once per frame
 	void Update () {
 		scoreText.text = "Score: " + currentScore;
 		multiplierText.text = "Multiplier: " + multiplier;
+
+		if (currentScore > highscore) {
+			highscore = currentScore;	
+			PlayerPrefs.SetInt("High Score", highscore);
+		}
+
+		highscoreText.text = "High Score: " + highscore;
 	}
 }
