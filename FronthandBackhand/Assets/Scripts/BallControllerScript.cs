@@ -48,6 +48,9 @@ public class BallControllerScript : MonoBehaviour {
 				rightIndex++;
 			}
 		}
+		if (song.time == 0) {
+			Application.LoadLevel(0);
+		}
 	}
 
 	void readBeatMap(){
