@@ -419,6 +419,7 @@ GameObject:
   - 81: {fileID: 751627011}
   - 114: {fileID: 751627016}
   - 114: {fileID: 751627017}
+  - 114: {fileID: 751627018}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -518,13 +519,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f334c8bbddf04b3886187e7bbc52570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Music: {fileID: 751627018}
+  SaturationStart: .5
+  BrightnessStart: .600000024
+  SaturationEnd: .600000024
+  BrightnessEnd: .5
+--- !u!114 &751627018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 751627010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db653bbc014354b7b9582213c800cbe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   BPM: 120
   TimeSignature: 4
   Song: {fileID: 500803835}
-  SaturationStart: .5
-  BrightnessStart: .75
-  SaturationEnd: 1
-  BrightnessEnd: .5
 --- !u!1 &852865256
 GameObject:
   m_ObjectHideFlags: 0
