@@ -63,6 +63,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 470046}
   - 212: {fileID: 21270046}
+  - 114: {fileID: 11441126}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -202,6 +203,18 @@ EdgeCollider2D:
   m_Points:
   - {x: -4.5134902, y: -3.59758377}
   - {x: 4.45110416, y: -3.61837912}
+--- !u!114 &11441126
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bce383151ac8c4951ab8c5de45e5e94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotationDuration: .200000003
 --- !u!114 &11443750
 MonoBehaviour:
   m_ObjectHideFlags: 1
