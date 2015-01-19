@@ -43,8 +43,8 @@ MonoBehaviour:
   song: {fileID: 0}
   beatMap: {fileID: 4900000, guid: df2edc363a148214f8192d3aa06a380c, type: 3}
   ballPrefab: {fileID: 102246, guid: c84ae92cf86744640bfcc199a0fe1db3, type: 2}
-  leftPosition: {x: 0, y: 0}
-  rightPosition: {x: 0, y: 0}
+  leftPosition: {x: -20, y: 13}
+  rightPosition: {x: 20, y: 13}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

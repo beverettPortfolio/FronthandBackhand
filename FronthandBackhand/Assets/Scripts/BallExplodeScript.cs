@@ -5,6 +5,8 @@ public class BallExplodeScript : MonoBehaviour {
 
 	public float LifeDuration;
 	public float RandomRange;
+	public float PitchMin;
+	public float PitchMax;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +15,8 @@ public class BallExplodeScript : MonoBehaviour {
 		angleRad += Random.Range (-RandomRange * Mathf.Deg2Rad, RandomRange * Mathf.Deg2Rad);
 		Vector2 goalPosition = new Vector2 (Mathf.Cos (angleRad), Mathf.Sin (angleRad)) * 10000000.0f;
 		gameObject.GetComponent<BallMovement> ().GoalPosition = goalPosition;
+
+		GetComponent<AudioSource> ().pitch = Random.Range (PitchMin, PitchMax);
 
 		Destroy (gameObject, LifeDuration);
 	}
