@@ -18,6 +18,10 @@ public class TriangleExplosionTrigger : MonoBehaviour {
 		}
 	}
 
+	void HideTriangle () {
+		GetComponent<SpriteRenderer> ().enabled = false;
+	}
+
 	void ToMenu() {
 		Application.LoadLevel ("Menu");
 	}
