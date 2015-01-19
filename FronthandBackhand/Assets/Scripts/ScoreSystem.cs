@@ -8,7 +8,6 @@ public class ScoreSystem : MonoBehaviour {
 	public int multiplier;
 
 	public GUIText scoreText;
-	public GUIText multiplierText;
 	public GUIText highscoreText;
 
 	public float scoreBarLength;
@@ -76,8 +75,6 @@ public class ScoreSystem : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//scoreText.text = "Score" + currentScore;
-		multiplierText.text = "Multiplier: x" + multiplier;
 		if (currentScore > highscore) {
 			highscore = currentScore;	
 			PlayerPrefs.SetInt("High Score", highscore);
@@ -87,10 +84,19 @@ public class ScoreSystem : MonoBehaviour {
 	}
 
 	void OnGUI(){
+		GUI.skin.label.alignment = TextAnchor.MiddleCenter;
 		GUI.backgroundColor = new Color(1,1,1,0.5f);
 		GUI.Box (new Rect (xPosition - scoreBarLength/2, yPosition, scoreBarLength, 30), "");
-		GUI.Box (new Rect (xPosition - scoreBarLength2/2, yPosition, scoreBarLength2, 30), "");
-		GUI.Box (new Rect (xPosition - scoreBarLength3/2, yPosition, scoreBarLength3, 30), "");
-		GUI.Box (new Rect (xPosition - scoreBarLength4/2, yPosition, scoreBarLength4, 30), "Score: " + currentScore);
+		if (scoreBarLength >= scoreBarMax) {
+			GUI.Box (new Rect (xPosition - scoreBarLength2 / 2, yPosition, scoreBarLength2, 30), "");
+				}
+		if (scoreBarLength2 >= scoreBarMax) {
+			GUI.Box (new Rect (xPosition - scoreBarLength3 / 2, yPosition, scoreBarLength3, 30), "");
+				}
+		if (scoreBarLength3 >= scoreBarMax) {
+			GUI.Box (new Rect (xPosition - scoreBarLength4 / 2, yPosition, scoreBarLength4, 30), "");
+				}
+		GUI.Label (new Rect (xPosition - 50, yPosition - 20, 100, 20), "Multiplier: x" + multiplier);
+		GUI.Label (new Rect (xPosition - 50, yPosition , 100, 30), "Score: " + currentScore);
 	}
 }
