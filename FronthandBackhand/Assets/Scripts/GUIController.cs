@@ -40,6 +40,14 @@ public class GUIController : MonoBehaviour {
 
 	}
 
+	public void quitConfirmation(){
+		transform.Find ("QuitConfirmation").gameObject.SetActive (true);
+	}
+
+	public void closeQuitConfirmation(){
+		transform.Find ("QuitConfirmation").gameObject.SetActive (false);
+	}
+
 	public void quitGame(){
 		Application.Quit ();
 	}
