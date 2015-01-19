@@ -28,6 +28,6 @@ public class TriangleExplosionTrigger : MonoBehaviour {
 	}
 
 	void ToMenu() {
-		Application.LoadLevel ("Menu");
+		Application.LoadLevel ("Tutorial");
 	}
 }
