@@ -42,8 +42,16 @@ public class BackgroundShift : MonoBehaviour {
 			h = _hue;
 		}
 
+		float beatAmount;
+		if (Music.IBeat % Music.TimeSignature == 1 || Music.IBeat % Music.TimeSignature == 3) {
+			
+			beatAmount = 2.0f * Mathf.Abs (0.5f - Mathf.Sqrt(Music.BeatPhase));
+		}
+		else {
+			beatAmount = 1.0f;
+		}
+
 		h = Mathf.Repeat (h, 360.0f) / 360.0f;
-		float beatAmount = 2.0f * Mathf.Abs (0.5f - Mathf.Sqrt(Music.BeatPhase));
 		float s = Mathf.Lerp (SaturationStart, SaturationEnd, beatAmount);
 		float b = Mathf.Lerp (BrightnessStart, BrightnessEnd, beatAmount);
 		HSBColor hsbColor = new HSBColor (h, s, b);
