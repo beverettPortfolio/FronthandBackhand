@@ -22,6 +22,22 @@ public class GUIController : MonoBehaviour {
 
 	public void loadCredits(){
 		//TODO switch the GUI from the tutorial to the credits
+		transform.Find ("TutorialImage").gameObject.SetActive (false);
+		transform.Find ("CreditImage").gameObject.SetActive (true);
+		transform.Find ("Tutorial").gameObject.SetActive (true);
+		transform.Find ("Credits").gameObject.SetActive (false);
+	}
+
+	public void loadTutorial(){
+		//TODO switch the GUI from the credits to the tutorial
+		transform.Find ("TutorialImage").gameObject.SetActive (true);
+		transform.Find ("CreditImage").gameObject.SetActive (false);
+		transform.Find ("Tutorial").gameObject.SetActive (false);
+		transform.Find ("Credits").gameObject.SetActive (true);
+	}
+
+	void swapImage(){
+
 	}
 
 	public void quitGame(){
