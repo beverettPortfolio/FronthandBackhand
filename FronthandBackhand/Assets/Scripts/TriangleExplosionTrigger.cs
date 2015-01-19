@@ -3,6 +3,7 @@ using System.Collections;
 
 public class TriangleExplosionTrigger : MonoBehaviour {
 	public BallControllerScript ballcontrol;
+	public AudioSource explosionAudio;
 
 	Animator anim;
 
@@ -16,6 +17,10 @@ public class TriangleExplosionTrigger : MonoBehaviour {
 		if (ballcontrol.song.time == 0) {
 			anim.SetTrigger ("Explode");
 		}
+	}
+
+	void PlayExplodeSound() {
+		explosionAudio.Play ();
 	}
 
 	void HideTriangle () {
