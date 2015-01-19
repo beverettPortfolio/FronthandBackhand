@@ -130,6 +130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LifeDuration: 5
   RandomRange: 60
+  PitchMin: .75
+  PitchMax: 3
 --- !u!114 &11469100
 MonoBehaviour:
   m_ObjectHideFlags: 1
