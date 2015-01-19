@@ -17,6 +17,7 @@ public class ScoreSystem : MonoBehaviour {
 	public float scoreBarLength4;
 	public float scoreBarMax;
 	public float xPosition;
+	public float yPosition;
 
 
 	// Use this for initialization
@@ -30,6 +31,7 @@ public class ScoreSystem : MonoBehaviour {
 		scoreBarLength4 = 100;
 		scoreBarMax = Screen.width - 100;
 		xPosition = Screen.width / 2;
+		yPosition = Screen.height - 50;
 	}
 
 	public void resetMultiplier() {
@@ -86,9 +88,9 @@ public class ScoreSystem : MonoBehaviour {
 
 	void OnGUI(){
 		GUI.backgroundColor = new Color(1,1,1,0.5f);
-		GUI.Box (new Rect (xPosition - scoreBarLength/2, 380, scoreBarLength, 30), "");
-		GUI.Box (new Rect (xPosition - scoreBarLength2/2, 380, scoreBarLength2, 30), "");
-		GUI.Box (new Rect (xPosition - scoreBarLength3/2, 380, scoreBarLength3, 30), "");
-		GUI.Box (new Rect (xPosition - scoreBarLength4/2, 380, scoreBarLength4, 30), "Score: " + currentScore);
+		GUI.Box (new Rect (xPosition - scoreBarLength/2, yPosition, scoreBarLength, 30), "");
+		GUI.Box (new Rect (xPosition - scoreBarLength2/2, yPosition, scoreBarLength2, 30), "");
+		GUI.Box (new Rect (xPosition - scoreBarLength3/2, yPosition, scoreBarLength3, 30), "");
+		GUI.Box (new Rect (xPosition - scoreBarLength4/2, yPosition, scoreBarLength4, 30), "Score: " + currentScore);
 	}
 }
