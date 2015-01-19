@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class GUIController : MonoBehaviour {
+	public AudioSource song;
 
 	// Use this for initialization
 	void Start () {
@@ -36,11 +37,10 @@ public class GUIController : MonoBehaviour {
 		transform.Find ("Credits").gameObject.SetActive (true);
 	}
 
-	void swapImage(){
-
-	}
-
 	public void quitConfirmation(){
+		if (!song.isPlaying) {
+			song.Play ();
+		}
 		transform.Find ("QuitConfirmation").gameObject.SetActive (true);
 	}
 
