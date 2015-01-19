@@ -95,5 +95,8 @@ public class TriangleController : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.UpArrow)) {
 			Flip ();
 		}
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			Application.LoadLevel ("Tutorial");
+		}
 	}
 }
