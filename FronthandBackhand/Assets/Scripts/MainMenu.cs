@@ -29,7 +29,7 @@ public class MainMenu : MonoBehaviour {
 
 	private void Menu_Main() {
 		if (GUI.Button (new Rect ((Screen.width/2)-100, (Screen.height/2)-145, 200, 50), "Tutorial")) {
-
+			Application.LoadLevel ("Tutorial");
 		}
 		if (GUI.Button (new Rect ((Screen.width/2)-100, (Screen.height/2)-85, 200, 50), "Export Mode")) {
 			Application.LoadLevel("MainGame");
