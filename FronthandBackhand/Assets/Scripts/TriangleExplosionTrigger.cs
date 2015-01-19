@@ -3,6 +3,7 @@ using System.Collections;
 
 public class TriangleExplosionTrigger : MonoBehaviour {
 	public BallControllerScript ballcontrol;
+	public AudioSource explosionAudio;
 
 	Animator anim;
 
@@ -18,11 +19,15 @@ public class TriangleExplosionTrigger : MonoBehaviour {
 		}
 	}
 
+	void PlayExplodeSound() {
+		explosionAudio.Play ();
+	}
+
 	void HideTriangle () {
 		GetComponent<SpriteRenderer> ().enabled = false;
 	}
 
 	void ToMenu() {
-		Application.LoadLevel ("Menu");
+		Application.LoadLevel ("Tutorial");
 	}
 }

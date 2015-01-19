@@ -80,7 +80,7 @@ public class ScoreSystem : MonoBehaviour {
 			PlayerPrefs.SetInt("High Score", highscore);
 		}
 
-		highscoreText.text = "High Score: " + highscore;
+		//highscoreText.text = "High Score: " + highscore;
 	}
 
 	void OnGUI(){
