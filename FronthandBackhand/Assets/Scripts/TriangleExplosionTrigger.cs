@@ -17,4 +17,8 @@ public class TriangleExplosionTrigger : MonoBehaviour {
 			anim.SetTrigger ("Explode");
 		}
 	}
+
+	void ToMenu() {
+		Application.LoadLevel ("Menu");
+	}
 }
