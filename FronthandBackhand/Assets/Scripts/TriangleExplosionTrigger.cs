@@ -14,7 +14,7 @@ public class TriangleExplosionTrigger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (ballcontrol.song.time == 0) {
+		if (!ballcontrol.song.isPlaying) {
 			anim.SetTrigger ("Explode");
 		}
 	}
