@@ -5,8 +5,7 @@ using System.Collections;
 /// A script that creates camera shake. This should be attached to the camera object that will be shaking.
 /// If the camera needs to move around, put the camera in an empty game object and move that game object instead.
 /// </summary>
-public class CameraShakeScript : MonoBehaviour
-{
+public class CameraShakeScript : MonoBehaviour {
     public static float DEFAULT_SHAKE_AMOUNT = .7f;
     // How long the object should shake for.
     public float shake = 0f;
@@ -22,35 +21,29 @@ public class CameraShakeScript : MonoBehaviour
     /// <summary>
     /// Sets the camera's original position, relative to its parent
     /// </summary>
-    void OnEnable()
-    {
+    void OnEnable() {
         originalPos = Camera.main.transform.localPosition;
     }
 
     /// <summary>
     /// Moves the camera to a random location within the radius of shakeAmount
     /// </summary>
-    void Update()
-    {
+    void Update() {
         //if shakestart then set original and start shaking
-        if (shake > 0 && !shakeStart)
-        {
+        if (shake > 0 && !shakeStart) {
             shakeStart = true;
         }
         //if shake has started and still shake left
-        else if (shake > 0 && shakeStart)
-        {
+        else if (shake > 0 && shakeStart) {
             Camera.main.transform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
 
             shake -= Time.deltaTime * decreaseFactor;
         }
-        else if (shake <= 0 && shakeStart)
-        {
+        else if (shake <= 0 && shakeStart) {
             shake = 0f;
             Camera.main.transform.localPosition = originalPos;
         }
-        else
-        {
+        else {
             Camera.main.transform.localPosition = originalPos;
         }
     }
@@ -59,8 +52,7 @@ public class CameraShakeScript : MonoBehaviour
     /// Shakes the screen for the specified amount of time.
     /// </summary>
     /// <param name="shake">Time in seconds</param>
-    public void screenShake(float shake)
-    {
+    public void screenShake(float shake) {
         this.shake += shake;
         shakeAmount = DEFAULT_SHAKE_AMOUNT;
     }
@@ -70,8 +62,7 @@ public class CameraShakeScript : MonoBehaviour
     /// </summary>
     /// <param name="shakeAmount">Time in seconds</param>
     /// <param name="shake">Amplitude of the shake</param>
-    public void screenShake(float shakeAmount, float shake)
-    {
+    public void screenShake(float shakeAmount, float shake) {
         this.shake += shake;
         this.shakeAmount = shakeAmount;
     }
